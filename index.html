@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05050a">
+  <title>𝔻𝔸𝔻𝔻𝕐 ℕ𝕆𝕌𝔾ℍ𝕋 𝕊𝔼𝔼𝕊 𝕐𝕆𝕌</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <main class="wrap">
+    <header class="hero">
+      <h1>𝔻𝔸𝔻𝔻𝕐 ℕ𝕆𝕌𝔾ℍ𝕋 𝕊𝔼𝔼𝕊 𝕐𝕆𝕌</h1>
+      <p class="sub">WhatsApp Presence Monitor</p>
+    </header>
+
+    <section class="card">
+      <form id="form" novalidate>
+        <label for="cc">Country code</label>
+        <select id="cc"></select>
+        <label for="num">Phone number</label>
+        <input id="num" type="tel" inputmode="tel" placeholder="e.g. 803 123 4567" autocomplete="off">
+        <p id="preview" class="preview">Formatted: —</p>
+        <p id="error" class="error" role="alert"></p>
+        <button id="go" type="submit"><span class="btn-text">Check status</span><span class="spinner"></span></button>
+      </form>
+    </section>
+
+    <section class="card" id="result" hidden aria-live="polite">
+      <div class="row between">
+        <h2 id="r-number">—</h2>
+        <span id="r-badge" class="badge unknown"><i class="dot"></i><b>UNKNOWN</b></span>
+      </div>
+      <p class="muted">Last checked: <span id="r-time">—</span></p>
+      <p id="r-reason" class="note"></p>
+      <h3>Status history for this number</h3>
+      <ul id="r-history" class="list"></ul>
+    </section>
+
+    <section class="stats">
+      <div class="card stat"><b id="s-total">0</b><span>Total checks</span></div>
+      <div class="card stat"><b id="s-unique">0</b><span>Numbers</span></div>
+      <div class="card stat"><b id="s-online">0</b><span>Online</span></div>
+      <div class="card stat"><b id="s-unknown">0</b><span>Unknown</span></div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Recent checks</h2>
+        <div class="row">
+          <button id="refresh" class="ghost" type="button">Refresh</button>
+          <button id="clear" class="ghost danger" type="button">Clear history</button>
+        </div>
+      </div>
+      <ul id="history" class="list"></ul>
+    </section>
+
+    <footer class="foot">
+      <p><b>Privacy note:</b> WhatsApp has no official way to see if someone else is online. This app never fakes status and never bypasses privacy settings. When it cannot verify, it shows UNKNOWN. History is stored only in your own browser.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
